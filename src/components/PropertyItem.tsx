@@ -1,72 +1,110 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
 import {PropertyItemProps} from '../interfaces/interfaces';
 
 const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
+  const {image, qualification, name, address, rooms, bathrooms, surface, cost} =
+    property;
   return (
-    <View style={styles.propertyContainer}>
-      <Image source={{uri: property.image}} style={styles.propertyImage} />
-      <View style={styles.propertyInfoContainer}>
-        <Text style={styles.propertyName}>{property.name}</Text>
-        <Text style={styles.propertyAddress}>Address: {property.address}</Text>
-        <Text style={styles.propertyRooms}>Rooms: {property.rooms}</Text>
-        <Text style={styles.propertyBathrooms}>
-          Bathrooms: {property.bathrooms}
-        </Text>
-        <Text style={styles.propertyCost}>Cost: {property.cost}</Text>
-        {/* Otros detalles de la propiedad */}
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={{uri: image}} style={styles.image} />
+        <View style={styles.starContainer}>
+          <Image
+            source={require('../assets/star.png')}
+            style={styles.starIcon}
+          />
+          <Text style={styles.starText}>{qualification}</Text>
+        </View>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.name}>{name}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Image source={require('../assets/location.png')} style={styles.icon} />
+        <Text style={styles.address}>{address}</Text>
+        <Image source={require('../assets/bed.png')} style={styles.icon} />
+        <Text>{rooms} </Text>
+        <Image source={require('../assets/bath.png')} style={styles.icon} />
+        <Text>{bathrooms} </Text>
+        <Image source={require('../assets/area.png')} style={styles.icon} />
+        <Text>{surface}</Text>
+      </View>
+      <View style={styles.costContainer}>
+        <Text style={styles.cost}>{cost}</Text>
+        <Image
+          source={require('../assets/hearthBackground.png')}
+          style={styles.heartIcon}
+        />
+        <Image
+          source={require('../assets/hearth.png')}
+          style={styles.heartIcon}
+        />
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  propertyContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+  container: {
     borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
     padding: 10,
     marginBottom: 10,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 2,
   },
-  propertyImage: {
-    width: 100,
-    height: 100,
+  imageContainer: {
+    position: 'relative',
+  },
+  image: {
+    width: 200,
+    height: 150,
     borderRadius: 10,
-    marginRight: 10,
   },
-  propertyInfoContainer: {
-    flex: 1,
-    justifyContent: 'center',
+  starContainer: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  propertyName: {
-    fontSize: 18,
+  starText: {
+    color: '#fff',
+    marginRight: 5,
+  },
+  starIcon: {
+    width: 20,
+    height: 20,
+  },
+  detailsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  icon: {
+    width: 20,
+    height: 20,
+    marginRight: 5,
+  },
+  name: {
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginLeft: 5,
   },
-  propertyAddress: {
-    fontSize: 14,
-    marginBottom: 3,
+  address: {
+    marginTop: 5,
   },
-  propertyRooms: {
-    fontSize: 14,
-    marginBottom: 3,
+  costContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
   },
-  propertyBathrooms: {
-    fontSize: 14,
-    marginBottom: 3,
+  cost: {
+    fontWeight: 'bold',
   },
-  propertyCost: {
-    fontSize: 14,
-    marginBottom: 3,
+  heartIcon: {
+    width: 20,
+    height: 20,
   },
 });
 
