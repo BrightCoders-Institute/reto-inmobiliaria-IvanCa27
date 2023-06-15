@@ -47,10 +47,10 @@ const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
               <TouchableOpacity
                 onPress={() => setIsHeartSelected(!isHeartSelected)}>
                 <Image
-                  data-testid="heart-icon"
+                  testID="heart-icon"
                   source={
                     isHeartSelected
-                      ? require('../assets/colorHeart.png')
+                      ? require('../assets/colorHearth.png')
                       : require('../assets/hearth.png')
                   }
                   style={styles.heartIcon}
