@@ -18,28 +18,39 @@ const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
         </View>
       </View>
       <View style={styles.detailsContainer}>
-        <Text style={styles.name}>{name}</Text>
-      </View>
-      <View style={styles.detailsContainer}>
-        <Image source={require('../assets/location.png')} style={styles.icon} />
-        <Text style={styles.address}>{address}</Text>
-        <Image source={require('../assets/bed.png')} style={styles.icon} />
-        <Text>{rooms} </Text>
-        <Image source={require('../assets/bath.png')} style={styles.icon} />
-        <Text>{bathrooms} </Text>
-        <Image source={require('../assets/area.png')} style={styles.icon} />
-        <Text>{surface}</Text>
-      </View>
-      <View style={styles.costContainer}>
-        <Text style={styles.cost}>{cost}</Text>
-        <Image
-          source={require('../assets/hearthBackground.png')}
-          style={styles.heartIcon}
-        />
-        <Image
-          source={require('../assets/hearth.png')}
-          style={styles.heartIcon}
-        />
+        <View style={styles.nameContainer}>
+          <Text style={styles.name}>{name}</Text>
+        </View>
+        <View style={styles.nameAddressContainer}>
+          <Image
+            source={require('../assets/location.png')}
+            style={styles.icon}
+          />
+          <Text style={styles.address}>{address}</Text>
+        </View>
+        <View style={styles.roomsCostContainer}>
+          <View style={styles.roomsContainer}>
+            <Image source={require('../assets/bed.png')} style={styles.icon} />
+            <Text>{rooms} </Text>
+            <Image source={require('../assets/bath.png')} style={styles.icon} />
+            <Text>{bathrooms} </Text>
+            <Image source={require('../assets/area.png')} style={styles.icon} />
+            <Text>{surface}</Text>
+          </View>
+          <View style={styles.costContainer}>
+            <Text style={styles.cost}>{cost}</Text>
+            <View style={styles.heartContainer}>
+              <Image
+                source={require('../assets/hearthBackground.png')}
+                style={styles.heartIcon}
+              />
+              <Image
+                source={require('../assets/hearth.png')}
+                style={styles.heartIcon}
+              />
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -47,11 +58,12 @@ const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
+    alignItems: 'center',
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
+    margin: 5,
+    backgroundColor: 'aliceblue',
+    padding: 20,
   },
   imageContainer: {
     position: 'relative',
@@ -63,13 +75,16 @@ const styles = StyleSheet.create({
   },
   starContainer: {
     position: 'absolute',
-    top: 10,
-    right: 10,
+    bottom: 5,
+    left: 80,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    backgroundColor: 'rgb(170, 165, 0)',
   },
   starText: {
-    color: '#fff',
+    color: 'black',
     marginRight: 5,
   },
   starIcon: {
@@ -77,6 +92,26 @@ const styles = StyleSheet.create({
     height: 20,
   },
   detailsContainer: {
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    marginTop: 5,
+    marginLeft: 8,
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+    justifyContent: 'center',
+  },
+
+  roomsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 5,
+  },
+
+  nameAddressContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 5,
@@ -93,14 +128,22 @@ const styles = StyleSheet.create({
   address: {
     marginTop: 5,
   },
+  roomsCostContainer: {
+    marginTop: 5,
+  },
   costContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 10, // Cambiado
   },
   cost: {
     fontWeight: 'bold',
+  },
+
+  heartContainer: {
+    alignSelf: 'flex-end', // Ajusta la alineación vertical del corazón al final
+    top: 10,
   },
   heartIcon: {
     width: 20,

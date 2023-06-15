@@ -1,7 +1,7 @@
 export interface Property {
   address: string;
   bathrooms: number;
-  cost: number;
+  cost: string;
   image: string;
   name: string;
   qualification: number;
