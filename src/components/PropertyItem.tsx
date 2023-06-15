@@ -1,12 +1,12 @@
-import React from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {PropertyItemProps} from '../interfaces/interfaces';
-
 const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
+  const [isHeartSelected, setIsHeartSelected] = useState(false);
   const {image, qualification, name, address, rooms, bathrooms, surface, cost} =
     property;
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="property-item">
       <View style={styles.imageContainer}>
         <Image source={{uri: image}} style={styles.image} />
         <View style={styles.starContainer}>
@@ -44,10 +44,18 @@ const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
                 source={require('../assets/hearthBackground.png')}
                 style={styles.heartIcon}
               />
-              <Image
-                source={require('../assets/hearth.png')}
-                style={styles.heartIcon}
-              />
+              <TouchableOpacity
+                onPress={() => setIsHeartSelected(!isHeartSelected)}>
+                <Image
+                  data-testid="heart-icon"
+                  source={
+                    isHeartSelected
+                      ? require('../assets/colorHeart.png')
+                      : require('../assets/hearth.png')
+                  }
+                  style={styles.heartIcon}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         </View>

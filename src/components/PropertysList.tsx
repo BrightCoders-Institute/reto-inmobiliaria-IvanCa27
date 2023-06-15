@@ -4,7 +4,9 @@ import PropertyItem from './PropertyItem';
 import Properties from '../databases/data.json';
 import {PropertysListProps} from '../interfaces/interfaces';
 
-const PropertysList: React.FC<PropertysListProps> = ({properties}) => {
+const PropertysList: React.FC<PropertysListProps> = ({
+  properties: _properties,
+}) => {
   return (
     <ScrollView>
       {Properties.properties.map((property, index) => (
