@@ -42,7 +42,7 @@ const PropertyItem: React.FC<PropertyItemProps> = ({property}) => {
             <View style={styles.heartContainer}>
               <Image
                 source={require('../assets/hearthBackground.png')}
-                style={styles.heartIcon}
+                style={styles.heartBackground}
               />
               <TouchableOpacity
                 onPress={() => setIsHeartSelected(!isHeartSelected)}>
@@ -154,12 +154,16 @@ const styles = StyleSheet.create({
     top: 10,
     position: 'relative',
   },
+  heartBackground: {
+    width: 40,
+    height: 40,
+  },
   heartIcon: {
     position: 'absolute', // Habilita el posicionamiento absoluto para el icono del corazón
-    bottom: 10, // Ajusta la posición vertical del icono del corazón
-    right: 8, // Ajusta la posición horizontal del icono del corazón
-    width: 20,
-    height: 20,
+    bottom: 4, // Ajusta la posición vertical del icono del corazón
+    right: 5, // Ajusta la posición horizontal del icono del corazón
+    width: 30,
+    height: 30,
   },
 });
 
