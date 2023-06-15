@@ -144,8 +144,12 @@ const styles = StyleSheet.create({
   heartContainer: {
     alignSelf: 'flex-end', // Ajusta la alineación vertical del corazón al final
     top: 10,
+    position: 'relative',
   },
   heartIcon: {
+    position: 'absolute', // Habilita el posicionamiento absoluto para el icono del corazón
+    bottom: 10, // Ajusta la posición vertical del icono del corazón
+    right: 8, // Ajusta la posición horizontal del icono del corazón
     width: 20,
     height: 20,
   },
