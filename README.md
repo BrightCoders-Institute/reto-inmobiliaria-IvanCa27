@@ -1,5 +1,7 @@
 ## Property App
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8910ab34ffc548da82c9bde6410dc756)](https://app.codacy.com/gh/BrightCoders-Institute/reto-inmobiliaria-IvanCa27?utm_source=github.com&utm_medium=referral&utm_content=BrightCoders-Institute/reto-inmobiliaria-IvanCa27&utm_campaign=Badge_Grade)
+
 ![BrightCoders Logo](img/logo.png)
 
 ## Table of contents
