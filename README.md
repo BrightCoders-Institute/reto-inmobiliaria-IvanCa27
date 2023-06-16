@@ -67,3 +67,5 @@ What is done is run the react-native run-android or react-native run-ios
 - [Co-authored-by: Iván Caetano](IvanCa27@users.noreply.github.com)
 
 ## Badges
+
+- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e7be5587dbc4206885c3cb31f5997ba)](https://app.codacy.com/gh/BrightCoders-Institute/reto-inmobiliaria-IvanCa27/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
