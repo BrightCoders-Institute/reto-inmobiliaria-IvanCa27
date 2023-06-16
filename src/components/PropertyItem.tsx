@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     marginRight: 5,
+    resizeMode: 'contain',
   },
   name: {
     fontWeight: 'bold',
