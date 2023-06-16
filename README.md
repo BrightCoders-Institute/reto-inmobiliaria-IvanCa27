@@ -1,18 +1,69 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/z5kNBBhk)
+## Property App
+
 ![BrightCoders Logo](img/logo.png)
 
-# App Inmobiliaria
+## Table of contents
 
-> [Ver instrucciones antes de iniciar](./instructions.md)
+- [Property App](#property-app)
+- [Table of contents](#table-of-contents)
+- [Description](#description)
+- [How to install and run the project](#how-to-install-and-run-the-project)
+  - [Install dependencies:](#install-dependencies)
+  - [Execute app (2 ways to do it):](#execute-app-2-ways-to-do-it)
+  - [Execute tests:](#execute-tests)
+- [How to Use the Project](#how-to-use-the-project)
+- [Credits](#credits)
+- [Badges](#badges)
 
-This README would normally document whatever steps are necessary to get the application up and running.
+## Description
 
-Things you may want to cover:
+A real estate company needs an App to be able to show its clients the properties it has available for rent.
 
-- Title or Project Name
-- Table of contents
-- Description. A brief description of what the project is about
-- How to Install and Run the Project.
-- How to Use the Project.
-- Credits
-- Badges
+The App must allow the real estate company to show a list of all the properties available for rent.
+For each property, the following information should be displayed:
+-Name
+-Address
+-Number of rooms
+-Number of bathrooms
+-Surface
+-Monthly rental cost
+-Evaluation or qualification of the property
+-Icon that allows the user to mark the properties they like.
+
+## How to install and run the project
+
+### Install dependencies:
+
+```
+npm install
+```
+
+```
+npm install --save-dev nodemon
+```
+
+```
+npm install --save-dev jest
+```
+
+### Execute app (2 ways to do it):
+
+```
+npm run start (press a (android) or i (ios))
+```
+
+### Execute tests:
+
+```
+npm run test
+```
+
+## How to Use the Project
+
+What is done is run the react-native run-android or react-native run-ios
+
+## Credits
+
+- [Co-authored-by: Iván Caetano](IvanCa27@users.noreply.github.com)
+
+## Badges
